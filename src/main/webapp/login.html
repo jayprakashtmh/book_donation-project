@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" href="fstyle.css">
+<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+	rel="stylesheet">
+</head>
+<body>
+
+	<header>
+		<a href="#" class="logo"><span>Dil Tak</span><b>|</b>Foundation</a>
+		<div class="fa-solid fa-bars" id="menu-icon"></div>
+		<ul class="navbar">
+			<li><a href="index.jsp">Home</a></li>
+			<li><a href="prod">Books</a></li>
+			<li><a href="ourteam">About Us</a></li>
+		</ul>
+		<a href="AdminLogin.html" class="h-btn">Are you Admin?</a>
+	</header>
+
+	<form action="userlogin" method="post">
+		<h2>Sign In</h2>
+		<div class="row100"></div>
+
+		<div class="row100">
+			<div class="col">
+				<div class="inputBox">
+					<input type="text" name="uname" required> <span
+						class="text">Username</span> <span class="line"></span>
+				</div>
+			</div>
+			<div class="col">
+				<div class="inputBox">
+					<i id="showPass" class="fa fa-eye" aria-hidden="true"
+						onclick="showPassworrd()"></i> <input type="password"
+						id="password" name="pword" required> <span class="text">Password</span>
+					<span class="line"></span>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row100">
+			<div class="col">
+				<input type="submit" id="subimt" value="Login">
+			</div>
+		</div>
+
+
+
+		<div class="instext">
+			<a href="register.html">New Here?</a>
+		</div>
+
+
+	</form>
+
+
+
+	<script type="text/javascript">
+    
+    </script>
+
+	<script type="text/javascript">
+    window.addEventListener("scroll", function(){
+        var header =document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+    })
+    
+    let menu = document.querySelector('#menu-icon')
+    let navbar = document.querySelector('.navbar')
+
+    menu.onclick = () => {
+        menu.classList.toggle('fa-xmark');
+        navbar.classList.toggle('active');
+    };
+
+    window.onscroll = () => {
+        menu.classList.remove('fa-xmark');
+        navbar.classList.remove('active');
+    }
+</script>
+
+	<script>
+    function showPassworrd(){
+        
+        var passField = document.getElementById("password");
+        var icon = document.getElementById("showPass");
+
+        if(passField.type==="password"){
+            passField.type="text";
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+        }else{
+            passField.type="password";
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+        }
+    }
+   
+</script>
+
+
+</body>
+</html>
